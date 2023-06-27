@@ -1,6 +1,6 @@
 # Instruções para popular o Banco de Dados
 
-Este arquivo fornece instruções sobre como popular o banco de dados do projeto XYZ.
+Este arquivo fornece instruções sobre como popular o banco de dados do projeto CrudPhp.
 
 ## Pré-requisitos
 
