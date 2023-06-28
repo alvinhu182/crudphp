@@ -53,7 +53,7 @@
                         <td><?=$usuario['telefone'];?></td>
                         <td>
                             <a class="btn btn-primary" href="./editar.php?id=<?=$usuario['id'];?>">Editar</a>
-                            <a class="btn btn-danger" href="../../Controllers/Users/excluir_action.php?id=<?=$usuario['id'];?>">Excluir</a>
+                            <a class="btn btn-danger" onclick="confirmarExclusao(<?=$usuario['id'];?>)">Excluir</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -61,5 +61,12 @@
         </table>
         <a class="btn btn-success" href="./cadastrar.php">Cadastrar Usuário</a>
     </div>
+    <script>
+        function confirmarExclusao(id) {
+            if (confirm("Você realmente deseja excluir o usuário?")) {
+                window.location.href = `../../Controllers/Users/excluir_action.php?id=${id}`;
+            }
+        }
+    </script>
 </body>
 </html>
