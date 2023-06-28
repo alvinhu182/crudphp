@@ -8,16 +8,16 @@
 </head>
 <body>
     <div class="container">
-        <?php 
+        <?php
         require '../../Configs/database.php';
-        
+
         $usuario = [];
         $id = filter_input(INPUT_GET, 'id');
         if ($id) {
             $sql = $pdo->prepare("SELECT * FROM usuario WHERE id = :id");
             $sql->bindValue(':id',$id);
             $sql->execute();
-        
+
             if($sql->rowCount() > 0 ){
                 $usuario = $sql->fetch(PDO::FETCH_ASSOC);
             } else {
@@ -28,7 +28,7 @@
             header("Location: ./lista.php");
         }
         ?>
-        
+
         <h1>Editar Usuário</h1>
         <form method="POST" action="../../Controllers/Users/editar_action.php">
             <input type="hidden" name="id" value="<?=$usuario['id'];?>"/>

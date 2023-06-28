@@ -7,6 +7,22 @@
     <title>CrudPhP</title>
 </head>
 <body>
+<?php
+    $success = filter_input(INPUT_GET, 'success');
+    if($success){
+?>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card bg-success text-center text-white">
+                        Salvo com sucesso
+                    </div>
+                </div>
+            </div>
+        </div>
+<?php
+    }
+?>
     <?php
     require '../../Configs/database.php';
 
@@ -15,7 +31,7 @@
     if($sql->rowCount() > 0) {
         $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
     }
-    ?> 
+    ?>
     <div class="container">
         <h1>Listagem de Usuários</h1>
         <table class="table">

@@ -14,7 +14,7 @@ if($id && $nome && $email && $telefone) {
     $sql->bindValue(':id', $id);
     $sql->execute();
 
-    header("Location: ../../Views/Users/lista.php");
+    header("Location: ../../Views/Users/lista.php?success=true");
     exit;
 } else {
     header("Location: ../../Views/Users/lista.php");
