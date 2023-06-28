@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1>Cadastrar Usuários</h1>
-        <form method="POST" action="cadastrar_action.php">
+        <form method="POST" action="../../Controllers/Users/cadastrar_action.php">
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome:</label>
                 <input type="text" class="form-control" id="nome" name="nome">
@@ -23,7 +23,7 @@
                 <input type="text" class="form-control" id="telefone" name="telefone">
             </div>
             <button type="submit" class="btn btn-primary">Salvar</button>
-            <a class="btn btn-success" href="index.php">Voltar</a>
+            <a class="btn btn-success" href="./lista.php">Voltar</a>
         </form>
     </div>
 </body>

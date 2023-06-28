@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <?php 
-        require 'config.php';
+        require '../../Configs/database.php';
         
         $usuario = [];
         $id = filter_input(INPUT_GET, 'id');
@@ -21,16 +21,16 @@
             if($sql->rowCount() > 0 ){
                 $usuario = $sql->fetch(PDO::FETCH_ASSOC);
             } else {
-                header("Location: index.php");
+                header("Location: ./lista.php");
                 exit;
             }
         } else {
-            header("Location: index.php");
+            header("Location: ./lista.php");
         }
         ?>
         
         <h1>Editar Usuário</h1>
-        <form method="POST" action="editar_action.php">
+        <form method="POST" action="../../Controllers/Users/editar_action.php">
             <input type="hidden" name="id" value="<?=$usuario['id'];?>"/>
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome:</label>
@@ -45,7 +45,7 @@
                 <input type="text" class="form-control" id="telefone" name="telefone" value="<?=$usuario['telefone'];?>">
             </div>
             <button type="submit" class="btn btn-primary">Atualizar</button>
-            <a class="btn btn-success" href="index.php">Voltar</a>
+            <a class="btn btn-success" href="./lista.php">Voltar</a>
         </form>
     </div>
 </body>

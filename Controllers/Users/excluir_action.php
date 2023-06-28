@@ -1,5 +1,5 @@
 <?php 
-require 'config.php';
+require '../../Configs/database.php';
 
 $id = filter_input(INPUT_GET, 'id');
 
@@ -9,5 +9,5 @@ if($id){
     $sql->execute();
 }
 
-header("Location: index.php");
+header("Location: ../../Views/Users/lista.php");
 ?>

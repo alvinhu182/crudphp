@@ -1,5 +1,5 @@
 <?php 
-require 'config.php';
+require '../../Configs/database.php';
 
 $nome = filter_input(INPUT_POST, 'nome');
 $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
@@ -18,13 +18,12 @@ if($nome && $email && $telefone){
         $sql->bindValue(':email', $email);
         $sql->bindValue(':telefone', $telefone);
         $sql->execute();
-        header("Location: index.php");
+        header("Location: ../../Views/Users/lista.php");
         exit;
     } else {
-        header("Location: cadastrar.php");
+        header("Location: ../../Views/Users/cadastrar.php");
     }
 } else {
-    header("Location: cadastrar.php");
+    header("Location: ../../Views/Users/cadastrar.php");
     exit;
 }
-

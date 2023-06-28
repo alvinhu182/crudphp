@@ -25,6 +25,17 @@ Siga os passos abaixo para popular o banco de dados:
    $db_user = 'nome_de_usuario';
    $db_password = 'senha';
 
+4. Crie um banco de dados com o seguinte script:
+
+```sql
+CREATE DATABASE `test`; 
+CREATE TABLE `test`.`usuario` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(64) NOT NULL,
+  `email` VARCHAR(64) NOT NULL,
+  `telefone` INT NOT NULL,
+  PRIMARY KEY (`id`))
+```
 
 ## Variavéis utilizadas neste projeto foram as seguintes:
 
